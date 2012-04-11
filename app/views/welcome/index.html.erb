@@ -1,0 +1,27 @@
+<%= content_for :head do%>
+	<%= javascript_include_tag 'welcome' %>
+
+	<script type="text/javascript">
+		$(function() {
+			var $waterfall = $('#waterfall');
+			$waterfall.imagesLoaded(function () {
+			    $waterfall.masonry({
+			      itemSelector: '.item'
+			    });
+			});
+		});
+		
+	</script>
+<% end -%>
+
+<ul id='waterfall' class="thumbnails">
+  <% @covers.each do |c| %>
+        <li class="span3 item">
+        	<%= link_to '#' do %>
+          <div class="thumbnail">
+              <%= image_tag c.absolute_url %>
+          </div>
+          <% end -%>
+        </li>
+        <% end -%>
+ </ul>

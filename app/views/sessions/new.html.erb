@@ -1,0 +1,9 @@
+<%= form_tag session_path, {:id => 'session', :class => 'well form-inline'} do %>
+	<%= text_field_tag :name, nil, {:class => 'input-small', :placeholder => 'username'} %>
+	<%= text_field_tag :pwd, nil, {:class => 'input-small', :placeholder => 'password'} %>
+	<label class="checkbox">
+	  <%= check_box_tag 'is_remember' %>
+	  Remember me
+	</label>
+	<button type="submit" class="btn">Sign in</button>
+<% end -%>
